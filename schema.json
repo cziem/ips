@@ -1,0 +1,84 @@
+{
+  "bio": {
+    "full name": "Your fullname",
+    "age": 23,
+    "lga": "somewhere in nigeria",
+    "blood group": "0+",
+    "genotype": "AA",
+    "height": "234.2''",
+    "residential_addr": "your street number"
+  },
+  "birth_records": {
+    "dob": "02-8-1990",
+    "time_of_birth": "2 am",
+    "hospital_name": "Federal Medical Center",
+    "hospital_address": "44b Zamlek Ave.",
+    "doctor_in_charge": "Philip Stanley",
+    "midwives": [
+      "Stella Vicent", "Oluchi Bridget", "Kate Henshaw"
+    ]
+  },
+  "medical_records": {
+    "current_health_report": "some health data",
+    "doctor": "Dully Brown",
+    "health_history": "pull up a file"
+  },
+  "educational_records": {
+    "schools_attended": [
+      "primary school 1993", "secondary school 1997"
+    ],
+    "certs": [
+      "waec", "B.Sc"
+    ],
+    "skills": [
+      "baking", "painting", "programming"
+    ]
+  },
+  "contact_details": {
+    "mobile_number": 234803493345,
+    "email": "edetmfon@gmail.com",
+    "social_platforms": {
+      "facebook": "facebook.com/edet",
+      "twitter": "@edfon",
+      "instagram": "@edfon"
+    },
+    "next_of_kin": {
+      "number": 23476543234,
+      "email": "udakpeter@hotmail.com",
+      "name": "Udak Peter Mfon"
+    }
+  },
+  "criminal_records": {
+    "police_statements": "link to file",
+    "offense": "link to file",
+    "all_crimes": "link to file"
+  },
+  "relation_records": {
+    "edit Kalu": {
+      "location": "address 1",
+      "number": 23456789032,
+      "occupation": "hair stylist"
+    },
+    "Prince Kelechi": {
+      "location": "address 2",
+      "number": 23456789032,
+      "occupation": "Photographer"
+    },
+    "Helen Paul": {
+      "location": "address 3",
+      "number": 23456789032,
+      "occupation": "Actress"
+    }
+  },
+  "financial_records": {
+    "bank_statement": "link to file",
+    "salary_draft": "link to file",
+    "financial_book": "link to file",
+    "assets": "list all assets and values"
+  },
+  "gov_related_services": {
+    "employment": "federal ministry of works",
+    "health_care": true,
+    "is_retired": false
+  }
+}
