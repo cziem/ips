@@ -1,0 +1,12 @@
+{
+  "test": {
+    "PORT": 3000,
+    "MONGODB_URI" : "mongodb://localhost:27017/NCDSTest",
+    "SECRET_KEY": "kilokilopalamanva2343q43TEStser"
+  },
+  "development": {
+    "PORT": 3000,
+    "MONGODB_URI" : "mongodb://localhost:27017/NCDS",
+    "SECRET_KEY": "NationALDBdevelopmentproc[env=dev]2343ladfj$#@3lad"
+  }
+}
