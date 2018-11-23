@@ -3,10 +3,18 @@ require('./config/config')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const app = express()
 const port = process.env.PORT
 const uri = process.env.MONGODB_URI
+
+const servePublic = path.join(__dirname, '../public')
+
+app.use(express.static(servePublic))
+app.set('view engine', 'pug')
+
+const userRoutes = require('./routes/users')
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -16,9 +24,11 @@ mongoose.connect(uri, {
   .then(() => console.log(`connected to database: ${uri}`))
   .catch(err => console.log('sorry we could not connect to the database...'))
 
-app.get('/', (r, s) => {
-  s.send('Welcome to the National Central Database System...')
-})
+// app.get('/', (req, res) => {
+//   res.render('index')
+// })
+
+app.use('/users', userRoutes.get_users)
 
 app.listen(port, () => console.log(`server running on port: ${port}`))
 
