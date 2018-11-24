@@ -8,11 +8,10 @@ html
 
   body
     div(class='welcome') 
-      h1='NCDS.GOV.NG'
+      h1='Welcome to IPS'
 
       div(class="login_form")
-        h2= 'Login'
-
+        
         form(action="/users/user_login", method="post")
           input(id="username" type="text" name="username" placeholder="username")
           input(id="password" type="text" name="password" placeholder="password")

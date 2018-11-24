@@ -13,6 +13,7 @@ module.exports = {
 
   // Register a new user
   add_new_user (req, res) {
+    console.log(req.body)
     // search the database for a given user,
     let email = req.body.email
     let user = User.find({ email })
@@ -36,6 +37,8 @@ module.exports = {
         residential_addr: req.body.residential_addr
       }
     })
+
+    console.log(user)
 
     user.save()
       .then(doc => {

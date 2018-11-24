@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
   /* font-family: 'Noto Sans SC', sans-serif; */
   /* font-family: 'Roboto', sans-serif; */
 }
@@ -23,6 +24,7 @@ body {
 .welcome h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  margin-bottom: 5rem;
 }
 
 .login_form {
@@ -38,6 +40,8 @@ body {
   background-size: contain;
   height: 90%;
   width: 50%;
+  min-height: 20rem;
+  max-height: 30rem;
   align-self: center;
   display: flex;
   flex-direction: column;
