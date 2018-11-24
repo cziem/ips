@@ -11,6 +11,8 @@ const uri = process.env.MONGODB_URI
 
 const servePublic = path.join(__dirname, '../public')
 
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.use(express.static(servePublic))
 app.set('view engine', 'pug')
 
@@ -24,11 +26,11 @@ mongoose.connect(uri, {
   .then(() => console.log(`connected to database: ${uri}`))
   .catch(err => console.log('sorry we could not connect to the database...'))
 
-// app.get('/', (req, res) => {
-//   res.render('index')
-// })
+app.get('/login', (req, res) => {
+  res.render('login')
+})
 
-app.use('/users', userRoutes.get_users)
+app.use('/users', userRoutes)
 
 app.listen(port, () => console.log(`server running on port: ${port}`))
 
