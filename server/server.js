@@ -26,7 +26,7 @@ mongoose.connect(uri, {
   .then(() => console.log(`connected to database: ${uri}`))
   .catch(err => console.log('sorry we could not connect to the database...'))
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
   res.render('login')
 })
 

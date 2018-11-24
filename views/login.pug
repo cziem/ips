@@ -1,6 +1,20 @@
 html 
   head 
-    title='login page' 
+    title='login page'
+    link(
+      href='/styles/style.css'
+      rel='stylesheet'
+    )  
 
-  body 
-    h1='enter details'
+  body
+    div(class='welcome') 
+      h1='NCDS.GOV.NG'
+
+      div(class="login_form")
+        h2= 'Login'
+
+        form(action="/login", method="post")
+          input(id="username" type="text" name="username" placeholder="username")
+          input(id="password" type="text" name="password" placeholder="password")
+          input(id="submit" type="submit" name="submit" value="login")
+
