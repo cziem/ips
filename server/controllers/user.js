@@ -44,5 +44,10 @@ module.exports = {
       .catch(err => {
         res.status(400).send(err.message)
       })
+  },
+
+  // user login
+  user_login (req, res) {
+    res.send('logging in...')
   }
 }

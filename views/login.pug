@@ -13,7 +13,7 @@ html
       div(class="login_form")
         h2= 'Login'
 
-        form(action="/login", method="post")
+        form(action="/users/user_login", method="post")
           input(id="username" type="text" name="username" placeholder="username")
           input(id="password" type="text" name="password" placeholder="password")
           input(id="submit" type="submit" name="submit" value="login")
