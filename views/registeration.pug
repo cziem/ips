@@ -8,12 +8,12 @@ html
       div(class="reg_form")
         
         form(action="/users/add_new", method="post")
-          input(id="firstName" type="text" name="firstName" placeholder="firstName")
-          input(id="lastName" type="text" name="lastName" placeholder="lastName")
-          input(id="username" type="text" name="username" placeholder="username")
-          input(id="email" type="email" name="email" placeholder="email")
-          input(id="password" type="password" name="password" placeholder="password")
-          input(id="nin" type="number" name="nin" placeholder="national indentification number")
+          input(id="firstName" type="text" name="firstName" placeholder="firstName" autocomplete="off")
+          input(id="lastName" type="text" name="lastName" placeholder="lastName" autocomplete="off")
+          input(id="username" type="text" name="username" placeholder="username" autocomplete="off")
+          input(id="email" type="email" name="email" placeholder="email" autocomplete="off")
+          input(id="password" type="password" name="password" placeholder="password" autocomplete="off")
+          input(id="nin" type="number" name="nin" placeholder="national indentification number" autocomplete="off")
 
           //- Register button
           input(id="submit" type="submit" name="submit" value="register")
