@@ -20,8 +20,12 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }
   })
   
-  fetch(url)
-    .then(resp = resp.json())
+  fetch(url, {
+    method: 'post',
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" }
+  })
+    .then(resp => resp.json())
     .then(data => console.log(data))
 
 })
