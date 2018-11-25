@@ -24,6 +24,11 @@ const BioSchema = new Schema({
     required: true,
     minlength: 3
   },
+  'username': {
+    type: String,
+    required: true,
+    minlength: 3
+  },
   // phoneNumber: [String],
   'nin': {
     type: Number,

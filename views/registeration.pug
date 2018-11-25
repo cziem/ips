@@ -2,4 +2,15 @@ html
   include partials/header.pug
 
   body
-    h1='Welcome to registration page'
+    div(class='welcome') 
+      h1='IPS Registration'
+
+      div(class="login_form")
+        
+        form(action="/users/add_new", method="post")
+          input(id="username" type="text" name="username" placeholder="username")
+          input(id="password" type="text" name="password" placeholder="password")
+          input(id="submit" type="submit" name="submit" value="login")
+        
+        div(class="register")
+          button(class="btn btn-register" id="register")='Register'
