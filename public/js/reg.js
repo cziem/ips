@@ -23,7 +23,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
   fetch(url, {
     method: 'post',
     body: JSON.stringify(data),
-    headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    headers: { "Content-Type": "application/json" }
   })
     .then(resp => resp.json())
     .then(data => console.log(data))
