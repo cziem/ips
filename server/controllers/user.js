@@ -48,6 +48,11 @@ module.exports = {
 
   // user login
   user_login (req, res) {
-    res.send('logging in...')
+    res.render('dashboard')
+  },
+
+  // register new users
+  register(req, res) {
+    res.render('registeration')
   }
 }

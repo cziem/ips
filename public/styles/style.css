@@ -78,3 +78,25 @@ body {
 #submit:hover {
   background-color: #016951;
 }
+
+.btn {
+  border: none;
+  height: 2.5rem;
+  border-radius: .3rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-register {
+  background-color: #e7e7e7;
+  color: #013e31;
+  transition: all .8s ease;
+}
+
+/* .btn-register:hover {
+  
+} */
