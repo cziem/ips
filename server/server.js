@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const path = require('path')
+const cors = require('cors')
 
 const app = express()
 const port = process.env.PORT
@@ -11,6 +12,9 @@ const uri = process.env.MONGODB_URI
 
 const servePublic = path.join(__dirname, '../public')
 
+app.use(cors({
+  origin: 'http://localhost:3000/users/register'
+}))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(servePublic))
