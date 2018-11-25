@@ -3,14 +3,20 @@ html
 
   body
     div(class='welcome') 
-      h1='IPS Registration'
+      h1(class="head-reg")='IPS Registration'
 
-      div(class="login_form")
+      div(class="reg_form")
         
         form(action="/users/add_new", method="post")
+          input(id="firstName" type="text" name="firstName" placeholder="firstName")
+          input(id="lastName" type="text" name="lastName" placeholder="lastName")
           input(id="username" type="text" name="username" placeholder="username")
-          input(id="password" type="text" name="password" placeholder="password")
-          input(id="submit" type="submit" name="submit" value="login")
+          input(id="email" type="email" name="email" placeholder="email")
+          input(id="password" type="password" name="password" placeholder="password")
+          input(id="nin" type="number" name="nin" placeholder="national indentification number")
+
+          //- Register button
+          input(id="submit" type="submit" name="submit" value="register")
         
         div(class="register")
-          button(class="btn btn-register" id="register")='Register'
+          button(class="btn btn-register" id="login")='login'

@@ -5,17 +5,17 @@ const BioSchema = new Schema({
   firstName: { 
     type: String, 
     required: true,
-    minlength: 5 
+    minlength: 2 
   },
   'lastName': { 
     type: String, 
     required: true,
-    minlength: 5 
+    minlength: 2 
   },
   'email': {
     type: String,
     required: true,
-    minlength: 12,
+    minlength: 8,
     unique: true,
     isConfirmed: Boolean
   },
@@ -38,32 +38,32 @@ const BioSchema = new Schema({
   },
   'age': {
     type: Number,
-    required: true,
+    // required: true,
     minlength: 1,
   },
   'height': {
     type: String,
-    required: true,
+    // required: true,
   },
   'genotype': {
     type: String,
-    required: true,
+    // required: true,
     minlength: 2
   },
   'blood_group': {
     type: String,
-    required: true,
+    // required: true,
     minlength: 1
   },
   'lga': {
     type: String,
-    required: true,
+    // required: true,
     minlength: 4
   },
   'residential_addr': {
     type: String,
     minlength: 8,
-    required: true
+    // required: true
   }
 })
 
