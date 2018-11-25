@@ -16,7 +16,8 @@ const BioSchema = new Schema({
     type: String,
     required: true,
     minlength: 12,
-    unique: true
+    unique: true,
+    isConfirmed: Boolean
   },
   'password': {
     type: String,
@@ -27,7 +28,8 @@ const BioSchema = new Schema({
   'nin': {
     type: Number,
     required: true,
-    unique: true
+    unique: true,
+    isConfirmed: Boolean
   },
   'age': {
     type: Number,
@@ -60,8 +62,24 @@ const BioSchema = new Schema({
   }
 })
 
+const Birth_Records = new Schema({
+  'dob': {
+    type: Date,
+    default: Date.now
+  },
+  'time_of_birth': {
+    type: Date,
+    default: Date.now
+  },
+  'hospital_name': String,
+  'hospital_address': String,
+  'doctor_in_charge': String,
+  'mid_wives': [String]
+})
+
 const userSchema = new Schema({
-  'bio': BioSchema
+  'bio': BioSchema,
+  'birth_records': Birth_Records
 })
 
 const User = mongoose.model('User', userSchema)

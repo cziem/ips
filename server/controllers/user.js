@@ -13,16 +13,7 @@ module.exports = {
 
   // Register a new user
   add_new_user (req, res) {
-    console.log(req.body)
-    // search the database for a given user,
-    let email = req.body.email
-    let user = User.find({ email })
-    
-    //  if found return error
-    if (user) return new Error(`Sorry, user with ${email} already exists`)
-
-    // else save the new user and return details
-    user = new User({
+    let user = new User({
       bio: {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -35,10 +26,16 @@ module.exports = {
         blood_group: req.body.blood_group,
         lga: req.body.lga,
         residential_addr: req.body.residential_addr
+      },
+      birth_records: {
+        dob: req.body.dob,
+        time_of_birth: req.body.tob,
+        hospital_name: req.body.hospital_name,
+        hospital_address: req.body.hospital_address,
+        doctor_in_charge: req.body.doctor_in_charge,
+        mid_wives: req.body.mid_wives
       }
     })
-
-    console.log(user)
 
     user.save()
       .then(doc => {
