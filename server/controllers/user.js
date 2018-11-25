@@ -2,13 +2,14 @@ const User = require('../model/user')
 
 module.exports = {
   get_users (req, res) {
-    // res.send('getting users')
-    try {
-      let user = User.find().select('-__v')
-      res.status(200).send(user)
-    } catch (error) {
-    res.status(400).send('No users found in the database')
-    }
+    User.find()
+      .select('-__v')
+      .then(user => {
+        res.status(200).send(user)
+      })
+      .catch(err => {
+        res.status(400).send('No users found in the database')
+      })
   },
 
   // Register a new user
