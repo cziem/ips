@@ -7,7 +7,7 @@ html
 
       div(class="reg_form")
         
-        form(action="/users/add_new", method="post")
+        form
           input(id="firstName" type="text" name="firstName" placeholder="firstName" autocomplete="off")
           input(id="lastName" type="text" name="lastName" placeholder="lastName" autocomplete="off")
           input(id="username" type="text" name="username" placeholder="username" autocomplete="off")
@@ -20,3 +20,5 @@ html
         
         div(class="register")
           button(class="btn btn-register" id="login")='login'
+
+  script(src="/js/reg.js")

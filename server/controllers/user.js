@@ -50,7 +50,15 @@ module.exports = {
 
   // user login
   user_login (req, res) {
-    res.render('dashboard')
+    let username = req.body.username
+
+    User.find({ username })
+      .then(user => {
+        console.log(user)
+        res.status(200).send(user)
+      })
+      .catch(err => res.send(err))
+    // res.render('dashboard')
   },
 
   // register new users
