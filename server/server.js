@@ -40,7 +40,7 @@ const appRoutes = require('./routes/appRoute')
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useFindAndModify: true
+  useFindAndModify: false
 })
   .then(() => console.log(`connected to database: ${uri}`))
   .catch(err => console.log('sorry we could not connect to the database...'))
@@ -49,6 +49,11 @@ mongoose.connect(uri, {
 app.get('/', appRoutes)
 app.use('/users', userRoutes)
 
-app.listen(port, () => console.log(`server running on port: ${port}`))
+
+app.listen(port, () => {
+  if (!process.env.NODE_ENV) {
+    console.log(`server running on: http://localhost:${port}`)
+  }
+})
 
 module.exports = app

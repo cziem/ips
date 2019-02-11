@@ -5,7 +5,10 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "mocha server/test/**.test.js"
+    "start:dev": "nodemon server/server.js",
+    "test": "mocha server/test/**.test.js",
+    "dbon": "sudo systemctl start mongod",
+    "dbkill": "sudo systemctl stop mongod"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.13",
