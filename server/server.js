@@ -15,18 +15,18 @@ const uri = process.env.MONGODB_URI
   //   origin: 'http://localhost:3000/users/register'
   // }))
   
-  // CORS middleware
-  app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Method", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, x-auth-token");
-    // res.header("Acces-Control-Expose-Headers", "x-auth-token")
-    
-    if (req.method === "OPTIONS") {
-      return res.end();
-    }
-    next();
-  });
+// CORS middleware
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Method", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, x-auth-token");
+  // res.header("Acces-Control-Expose-Headers", "x-auth-token")
+  
+  if (req.method === "OPTIONS") {
+    return res.end();
+  }
+  next();
+});
   
 const servePublic = path.join(__dirname, '../public')
 

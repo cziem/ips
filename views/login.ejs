@@ -1,0 +1,19 @@
+<% include partials/header %>
+
+  <div class="welcome">
+    <h1>Welcome to IPS</h1>
+
+    <div class="login_form">
+      <form action="/users/user_login" method="post">
+        <input type="text" name="username" id="username" autocomplete="off" autofocus placeholder="username">
+        <input type="password" name="password" id="password" placeholder="password">
+        <button type="submit">login</button>
+      </form>
+
+      <div class="register">
+        <button>register</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/login.js"></script>
