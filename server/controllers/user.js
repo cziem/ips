@@ -49,16 +49,21 @@ module.exports = {
   },
 
   // user login
-  user_login (req, res) {
+  user_login: async (req, res) => {
     let username = req.body.username
 
-    User.find({ username })
-      .then(user => {
-        console.log(user)
-        res.status(200).send(user)
-      })
-      .catch(err => res.send(err))
-    // res.render('dashboard')
+    try {
+      const user = await User.find({ username })
+      if (user.length > 0) {
+        res.status(200)
+        return res.render('dashboard', { user })
+      } else {
+        return
+      }
+    } catch (error) {
+      req.flash('error', 'User not found!, Check credentials')
+      res.redirect('/login')
+    }
   },
 
   // register new users

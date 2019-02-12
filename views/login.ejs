@@ -3,11 +3,13 @@
   <div class="welcome">
     <h1>Welcome to IPS</h1>
 
-    <div class="login_form">
-      <form action="/users/user_login" method="post">
+    <div class="ui form login_form">
+      <form action="/users/login" method="post">
         <input type="text" name="username" id="username" autocomplete="off" autofocus placeholder="username">
         <input type="password" name="password" id="password" placeholder="password">
-        <button type="submit">login</button>
+        <button type="submit" class="big ui inverted green button">login</button>
+
+        <div class="ui error message"></div>
       </form>
 
       <div class="register">
@@ -16,4 +18,4 @@
     </div>
   </div>
 
-  <script src="/js/login.js"></script>
+<% include partials/form-footer %>

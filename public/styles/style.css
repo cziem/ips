@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #029676;
+  background-color: #0b4437;
   color: #fcfcfc;
   display: flex;
   flex-direction: column;
@@ -11,8 +11,8 @@ body {
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
-  /* font-family: 'Noto Sans SC', sans-serif; */
-  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Noto Sans SC', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .welcome {
