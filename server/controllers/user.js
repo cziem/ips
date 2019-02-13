@@ -52,17 +52,13 @@ module.exports = {
   user_login: async (req, res) => {
     let username = req.body.username
 
-    try {
-      const user = await User.find({ username })
-      if (user.length > 0) {
-        res.status(200)
-        return res.render('dashboard', { user })
-      } else {
-        return
-      }
-    } catch (error) {
+    const user = await User.find({ username })
+    if (user.length > 0) {
+      res.status(200)
+      return res.render('dashboard', { user })
+    } else {
       req.flash('error', 'User not found!, Check credentials')
-      res.redirect('/login')
+      res.redirect('/')
     }
   },
 
