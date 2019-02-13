@@ -1,24 +1,125 @@
 <% include partials/header %>
 
-  <div class="welcome">
-    <h1 class="head-reg">IPS Registration</h1>
-    <div class="reg_form">
-      <form action="" method="post">
-        <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="First Name" autofocus>
-        <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Last Name">
-        <input type="text" name="username" id="username" placeholder="Username">
-        <input type="email" name="email" id="email" placeholder="example@email.com">
-        <input type="password" name="password" id="password" placeholder="Enter password">
-        <input type="text" name="nin" id="nin" placeholder="National Indentification Number">
-
-        <button type="submit">Register</button>
-
-        <div class="ui error message"></div>
-      </form>
-
-      <div class="register">
-        <button>login</button>
+  <div class="ui main">
+    <h2 class="ui teal image header">
+      <img src="/img/SealNigerianPresident-300x300.png" class="image">
+      <div class="content">
+        IPS Registration
       </div>
+    </h2>
+    <div class="ui raised very padded container segment stacked">
+      <div class="column">
+        <form action="" method="post" class="ui large form">
+          <div class="ui">
+            <h4 class="ui dividing header">Personal Information</h4>
+            <div class="field">
+              <label>Name</label>
+              <div class="two fields">
+                <div class="field">
+                  <input type="text" name="firstName" placeholder="First Name">
+                </div>
+                <div class="field">
+                  <input type="text" name="lastName" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+  
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="username" placeholder="Username">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="at icon"></i>
+                <input type="email" name="email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+  
+            <h4 class="ui dividing header">Nationality Information</h4>
+            <div class="two fields">
+              <div class="field">
+                <label>Country</label>
+                <div class="ui left icon input">
+                  <input type="text" name="country" value="Nigeria" disabled>
+                  <i class="flag icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <label>Select State</label>
+                <select class="ui fluid dropdown">
+                  <option value="">State</option>
+                  <option value="1">Abia</option>
+                  <option value="2">Adamawa</option>
+                  <option value="3">Akwa Ibom</option>
+                  <option value="4">Anambra</option>
+                  <option value="5">Bauchi</option>
+                  <option value="6">Bayelsa</option>
+                  <option value="7">Benue</option>
+                  <option value="9">CROSS RIVER</option>
+                  <option value="8">Bornu</option>
+                  <option value="10">Delta</option>
+                  <option value="11">Ebonyi</option>
+                  <option value="12">Edo</option>
+                  <option value="13">Ekiti</option>
+                  <option value="14">Enugu</option>
+                  <option value="15">Gombe</option>
+                  <option value="16">Imo</option>
+                  <option value="17">Jigawa</option>
+                  <option value="18">Kaduna</option>
+                  <option value="19">Kano</option>
+                  <option value="20">Katsina</option>
+                  <option value="21">Kebbi</option>
+                  <option value="22">Kogi</option>
+                  <option value="23">Kwara</option>
+                  <option value="24">Lagos</option>
+                  <option value="25">Nasarawa</option>
+                  <option value="26">Niger</option>
+                  <option value="27">Ogun</option>
+                  <option value="28">Ondo</option>
+                  <option value="29">Osun</option>
+                  <option value="30">Oyo</option>
+                  <option value="31">Plateau</option>
+                  <option value="32">Rivers</option>
+                  <option value="33">Sokoto</option>
+                  <option value="34">Taraba</option>
+                  <option value="35">Yobe</option>
+                  <option value="36">Zamfara</option>
+                  <option value="37">Fct Abuja</option>
+                </select>
+              </div>
+            </div>
+
+            <h4 class="ui dividing header">Identity Information</h4>
+            <div class="two fields">
+              <div class="eight wide field">
+                <label>National Identity Number</label>
+                <input type="text" name="nin" maxlength="16" placeholder="NIN #">
+              </div>
+              <div class="eight wide field">
+                <label>National ID Card</label>
+                <input type="text" name="nin" maxlength="16" placeholder="National ID Carad Number #">
+              </div>
+            </div>
+  
+            <div class="ui fluid large teal submit button">Register</div>
+          </div>
+  
+          <div class="ui error message"></div>
+        </form>
+  
+      </div>
+    </div>
+
+    <div class="ui message">
+        Have an account? <a href="/">Login</a>
     </div>
   </div>
 
