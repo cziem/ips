@@ -1,127 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+SC|Roboto');
 
+
 body {
-  margin: 0;
-  padding: 0;
   background-color: #0b4437;
-  color: #fcfcfc;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Montserrat', sans-serif;
-  height: 100vh;
-  font-family: 'Noto Sans SC', sans-serif;
-  font-family: 'Roboto', sans-serif;
 }
-
-.welcome {
-  width: 60%;
-  height: 80vh;
-  text-align: center;
+body > .grid {
+  height: 100%;
 }
-
-.welcome h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  margin-bottom: 5rem;
+.image {
+  margin-top: -100px;
 }
-
-.head-reg {
-  margin-bottom: 2rem !important;
-}
-
-.login_form, .reg_form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 50vh;
-}
-
-.reg_form {
-  height: 80%;
-}
-
-.login_form form {
-  background: url('../img/Seal_of_the_President_of_Nigeria.svg.png') no-repeat center;
-  background-color: rgba(0, 0, 0, 0.06);
-  background-size: contain;
-  height: 90%;
-  width: 50%;
-  min-height: 20rem;
-  max-height: 30rem;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.reg_form form {
-  background-color: rgba(0, 0, 0, 0.06);
-  background-size: contain;
-  height: 90%;
-  width: 50%;
-  min-height: 20rem;
-  /* max-height: 30rem; */
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.login_form input,
-.reg_form input {
-  display: block;
-  width: 90%;
-  height: 3rem;
-  padding: .3rem;
-  border: none;
-  font-size: 1.1rem;
-  color: #6b6b6b;
-  background-color: #cce2dd;
-  border-radius: .3rem;
-  transition: all .2s ease;
-}
-
-.reg_form input {
-  height: 2.5rem;
-}
-
-.login_form input:focus,
-.reg_form input:focus {
-  background-color: #fcfcfc;
-  outline: none;
-}
-
-#submit {
-  background-color: #013e31;
-  color: #fcfcfc;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color .2s ease;
-}
-
-#submit:hover {
-  background-color: #016951;
-}
-
-.btn {
-  border: none;
-  height: 2.5rem;
-  border-radius: .3rem;
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-}
-
-.btn:hover {
-  opacity: 0.7;
-}
-
-.btn-register {
-  background-color: #e7e7e7;
-  color: #013e31;
-  transition: all .8s ease;
-  width: 6rem;
+.column {
+  max-width: 450px;
 }
