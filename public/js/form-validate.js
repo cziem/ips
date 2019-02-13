@@ -49,6 +49,33 @@ $('.ui.form')
             prompt: 'Please provide last name'
           }
         ]
+      },
+      state: {
+        identifier: 'state',
+        rules: [
+          {
+            type: 'empty',
+            prompt: 'Please select a state'
+          }
+        ]
+      },
+      nin: {
+        identifier: 'nin',
+        rules: [
+          {
+            type: 'empty',
+            prompt: 'Please provide your NIN'
+          }
+        ]
+      },
+      nic: {
+        identifier: 'nic',
+        rules: [
+          {
+            type: 'empty',
+            prompt: 'Please provide national ID card details'
+          }
+        ]
       }
     }
   })
