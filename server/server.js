@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const flash = require('connect-flash')
 const methodOverride = require('method-override')
+const expressSanitizer = require('express-sanitizer')
+const passport = require('passport')
 const cors = require('cors')
 
 
@@ -33,6 +35,15 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(flash())
 app.locals.moment = require('moment')
+
+// Configure Passport
+app.use(require('express-session')({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 // pass current user to every page and route

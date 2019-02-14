@@ -1,6 +1,19 @@
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+
 const User = require('../model/user')
 
+// Configure Passport
+passport.use(new LocalStrategy(User.authenticate()))
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 module.exports = {
+  // register new users
+  register(req, res) {
+    res.render('registeration')
+  },
+
   get_users (req, res) {
     User.find()
       .select('-__v')
@@ -13,57 +26,72 @@ module.exports = {
   },
 
   // Register a new user
-  add_new_user (req, res) {
-    let user = new User({
-      bio: {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        nin: req.body.nin,
-        age: req.body.age,
-        height: req.body.height,
-        genotype: req.body.genotype,
-        blood_group: req.body.blood_group,
-        lga: req.body.lga,
-        residential_addr: req.body.residential_addr
-      },
-      birth_records: {
-        dob: req.body.dob,
-        time_of_birth: req.body.tob,
-        hospital_name: req.body.hospital_name,
-        hospital_address: req.body.hospital_address,
-        doctor_in_charge: req.body.doctor_in_charge,
-        mid_wives: req.body.mid_wives
-      }
+  add_new_user: async (req, res) => {
+    const { 
+      firstName,
+      lastName,
+      username,
+      email,
+      password,
+      state,
+      nin,
+      nic
+    } = req.body
+
+    const userData = new User({
+      firstName,
+      lastName,
+      username,
+      email,
+      state,
+      nin,
+      nic
     })
 
-    user.save()
-      .then(doc => {
-        res.status(201).send(doc)
+    try {
+      let user = await User.register(userData, password)
+      passport.authenticate('local')(req, res, () => {
+        res.redirect('/dashboard')
+        res.render('dashboard', user)
       })
-      .catch(err => {
-        res.status(400).send(err.message)
-      })
-  },
+      // const user = await User.create(userData)
+      // req.flash('success', `Registration Successful. ${user.username}, remember to updated you profile. <a href="/users/profile/update">Update Now</a>`)
 
-  // user login
-  user_login: async (req, res) => {
-    let username = req.body.username
-
-    const user = await User.find({ username })
-    if (user.length > 0) {
-      res.status(200)
-      return res.render('dashboard', { user })
-    } else {
-      req.flash('error', 'User not found!, Check credentials')
-      res.redirect('/')
+      // res.redirect('/dashboard')
+      // res.render('dashboard', { user })
+    } catch (error) {
+      res.status(500)
+      req.flash('error', error.message)
+      console.log(error)
     }
   },
 
-  // register new users
-  register(req, res) {
-    res.render('registeration')
-  }
+  // user login
+  // user_login: async (req, res) => {
+  //   let username = req.body.username
+
+  //   const user = await User.find({ username })
+  //   if (user.length > 0) {
+  //     res.status(200)
+  //     return res.render('dashboard', { user })
+  //   } else {
+  //     req.flash('error', 'User not found!, Check credentials')
+  //     res.redirect('/')
+  //   }
+  // },
+
+  // Handle User Login
+  user_login: passport.authenticate('local', {
+  successRedirect: '/dashboard',
+  successFlash: 'Successfully logged into admin account',
+  failureRedirect: '/',
+  failureFlash: 'Invalid credentials! Contact admin'
+  }),
+
+  // logout User
+  logout: (req, res) => {
+    req.logout()
+    req.flash('success', `See you soon...`)
+    res.redirect('/')
+}
 }
