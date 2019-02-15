@@ -6,5 +6,9 @@ module.exports = {
 
   dashboard: (req, res) => {
     res.render('dashboard')
+  },
+
+  profile: (req, res) => {
+    res.render('users/profile')
   }
 }
