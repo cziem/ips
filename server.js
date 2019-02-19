@@ -1,4 +1,4 @@
-require('./config/config')
+require('./server/config/config')
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -11,15 +11,15 @@ const passport = require('passport')
 const cors = require('cors')
 
 
-const userRoutes = require('./routes/users')
-const appRoutes = require('./routes/appRoute')
+const userRoutes = require('./server/routes/users')
+const appRoutes = require('./server/routes/appRoute')
 
 
 const app = express()
 const port = process.env.PORT
 const uri = process.env.MONGODB_URI
   
-const servePublic = path.join(__dirname, '../public')
+const servePublic = path.join(__dirname, './public')
 
 app.use(require('express-session')({
   secret: process.env.SESSION_SECRET,
