@@ -4,8 +4,8 @@
   "description": "A database system",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "start:dev": "nodemon server/server.js -ext '.ejs/.css'",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js -ext '.ejs/.css'",
     "test": "mocha server/test/**.test.js",
     "dbon": "sudo systemctl start mongod",
     "dbkill": "sudo systemctl stop mongod"
