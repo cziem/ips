@@ -16,10 +16,10 @@ module.exports = {
         res.status(200).send(user)
       })
       .catch(err => {
-        res.status(400).send('No users found in the database')
+        res.status(500).send(err)
       })
   },
-
+  
   // Registration form
   register: (req, res) => {
     res.render('registration')
@@ -32,10 +32,10 @@ module.exports = {
 
   // Handle User Login
   user_login: passport.authenticate('local', {
-  successRedirect: '/dashboard',
-  successFlash: 'Successfully logged into admin account',
-  failureRedirect: '/',
-  failureFlash: 'Invalid credentials! Contact admin'
+    successRedirect: '/dashboard',
+    successFlash: 'Successfully logged into admin account',
+    failureRedirect: '/',
+    failureFlash: 'Invalid credentials! Contact admin'
   }),
 
   // // logout User
