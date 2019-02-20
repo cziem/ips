@@ -23,3 +23,13 @@ body {
 .ui.segment.load {
   height: 20em;
 }
+
+.ui.secondary.pointing.menu {
+  display: -webkit-box;
+  display: -moz-box;
+}
+
+.ui.menu:not(.vertical) .right.menu {
+  display: -webkit-box;
+  display: -moz-box;
+}
