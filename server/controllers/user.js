@@ -32,17 +32,17 @@ module.exports = {
       lastName,
       username,
       email,
-      password,
       state,
       nin,
       nic
     } = req.body
 
+    const { password } = req.body
+
     const userData = new User({
       firstName,
       lastName,
       username,
-      password,
       email,
       state,
       nin,
@@ -50,16 +50,12 @@ module.exports = {
     })
 
     try {
-      // let user = await User.register(userData, password)
-      // passport.authenticate('local')(req, res, () => {
-      //   res.redirect('/dashboard')
-      //   res.render('dashboard', user)
-      // })
-      const user = await User.create(userData)
-      req.flash('success', `Registration Successful. ${user.username}, remember to updated you profile.`)
+      let user = await User.register(userData, password)
+      passport.authenticate('local')(req, res, () => {
+        req.flash('success', `Registration Successful. ${user.username}, remember to updated you profile.`)
 
-      // res.render('dashboard', { user })
-      res.redirect(`/dashboard/${user.username}`)
+        res.redirect('/dashboard')
+      })
     } catch (error) {
       res.status(500)
       req.flash('error', error.message)
