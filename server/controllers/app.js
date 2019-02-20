@@ -1,13 +1,25 @@
+const User = require('../model/user')
+
 module.exports = {
   login: (req, res) => {
     res.render('login')
   },
 
-  dashboard: (req, res) => {
-    res.render('dashboard')
+  dashboard: async (req, res) => { 
+    try {
+      let user = await User.find({ username: req.params.username })
+      res.render('dashboard', { user })
+    } catch (error) {
+      req.flash('error', 'Could not find user with requested username')
+    }
   },
 
-  profile: (req, res) => {
-    res.render('users/profile')
+  profile: async (req, res) => {
+    try {
+      let user = await User.find({ username: req.params.username })
+      res.render('users/profile', { user })
+    } catch (error) {
+      req.flash('error', 'Could not find user with requested username')
+    }
   },
 }
