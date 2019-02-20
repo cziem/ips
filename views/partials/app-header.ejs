@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="/styles/app.css">
+  <title>Welcome To IPS</title>
+</head>
+<body>
+
+  <!-- Header Goes here -->
+  <div class="ui fixed inverted segment">
+    <div class="ui inverted secondary pointing menu">
+      <a class="item" href="/dashboard">
+        <img class="ui avatar image" src="/img/SealNigerianPresident-300x300.png" alt="IPS logo">
+      </a>
+      <a class="item active">
+        Home
+      </a>
+      <a class="item">
+        Messages
+      </a>
+      <a class="item">
+        Friends
+      </a>
+      <div class="right menu">
+        <% if (currentUser) { %>
+          <a href="#" class="ui item">
+            <i class="user icon"></i>
+            Welcome, <%= currentUser.username %>
+          </a>
+          <a class="ui item" href="/users/logout">
+            Logout
+          </a>
+        <% } %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container flash">
+    <% if (error && error.length > 0) { %>
+      <div class="ui negative message">
+        <i class="close icon"></i>
+        <%= error %>
+      </div>
+    <% } %>
+    <% if (warn && warn.length > 0) { %>
+      <div class="ui warning message">
+        <i class="close icon"></i>
+        <%= warn %>
+      </div>
+    <% } %>
+    <% if (success && success.length > 0) { %>
+      <div class="ui positive message">
+        <i class="close icon"></i>
+        <%= success %>
+      </div>
+    <% } %>
+  </div>
