@@ -24,7 +24,7 @@ module.exports = {
   register: (req, res) => {
     res.render('registration')
   },
-
+  
   // Register a new user
   add_new_user: async (req, res) => {
     

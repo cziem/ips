@@ -1,6 +1,6 @@
 module.exports = {
   login: (req, res) => {
-    res.redirect('/login')
+    res.render('login')
   },
 
   dashboard: (req, res) => {
