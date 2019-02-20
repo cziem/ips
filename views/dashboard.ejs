@@ -1,5 +1,12 @@
-<% include partials/header %>
+<% include partials/app-header %>
 
-<h1>Welcome <%= user.username %> </h1>
-
+<div class="ui container">
+  <div class="ui segment load">
+    <div class="ui active inverted dimmer">
+      <div class="ui text loader">Please wait, while we generate your content</div>
+    </div>
+    <p></p>
+  </div>
+</div>
+  
 <% include partials/footer %>

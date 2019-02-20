@@ -15,4 +15,7 @@ router.post('/register', userController.add_new_user)
 // Handle login request
 router.post('/login', userController.user_login)
 
+// Logout User
+router.get('/logout', userController.logout)
+
 module.exports = router
