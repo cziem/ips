@@ -64,7 +64,7 @@ mongoose.connect(uri, {
   .catch(err => console.log('sorry we could not connect to the database...'))
 
 // Routes
-app.get('/', appRoutes)
+app.use('/', appRoutes)
 app.use('/users', userRoutes)
 
 app.listen(port, () => {
